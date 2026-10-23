@@ -1,0 +1,330 @@
+/* ========================
+   RESET + BASE
+======================== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+
+  background-color: #0a3d2e;
+  background-image: url("https://i.imgur.com/cHu9J09.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ========================
+   CONTENEDOR APP
+======================== */
+.app {
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 26px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+}
+
+/* ========================
+   LOGO / TITULO
+======================== */
+.logo {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 12px;
+}
+
+.frase-logo {
+  font-size: 1.05em;
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+h1, h2 {
+  margin: 12px 0;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+/* ========================
+   ESTADO / PRECIO
+======================== */
+#estadoJuego {
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 14px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+}
+
+#precioActual {
+  margin-top: 6px;
+  font-size: 1.25em;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+/* ========================
+   PARTIDOS
+======================== */
+.partido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 14px 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.partido:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+.partido span {
+  flex: 1;
+  font-size: 0.95em;
+}
+
+/* UX ESTADOS */
+.partido.completo {
+  border: 2px solid #1db954;
+  box-shadow: 0 0 14px rgba(29,185,84,0.6);
+}
+
+.partido.incompleto {
+  border: 2px solid #e74c3c;
+  animation: shake 0.35s ease;
+}
+
+/* ========================
+   BOTONES L E V
+======================== */
+.partido .botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex: 1.4;
+}
+
+button {
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+/* Ripple */
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255,255,255,0.18);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+button:active::after {
+  opacity: 1;
+}
+
+/* Seleccionado */
+button.seleccionado {
+  background: linear-gradient(135deg, #0d6efd, #6610f2) !important;
+  color: #fff !important;
+  box-shadow: 0 0 22px rgba(241,196,15,0.9);
+  animation: pulseSelect 0.35s ease-out;
+  transform: scale(1.18);
+}
+
+/* Colores L E V */
+.partido .botones button:nth-child(1) {
+  background: #1db954;
+}
+
+.partido .botones button:nth-child(2) {
+  background: #f1c40f;
+  color: #000;
+}
+
+.partido .botones button:nth-child(3) {
+  background: #e74c3c;
+}
+
+/* ========================
+   INPUTS
+======================== */
+input {
+  width: 92%;
+  max-width: 420px;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 14px;
+  border: none;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 14px rgba(29,185,84,0.9);
+}
+
+/* ========================
+   BOTONES ACCIÓN
+======================== */
+.acciones {
+  margin: 20px 0;
+}
+
+.acciones button {
+  width: 92%;
+  max-width: 420px;
+  margin: 8px auto;
+  display: block;
+  background: linear-gradient(135deg, #1db954, #159f46);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+.acciones button:nth-child(2) {
+  background: linear-gradient(135deg, #3498db, #1f78b4);
+}
+
+.acciones button:nth-child(3) {
+  background: linear-gradient(135deg, #e67e22, #c7630f);
+}
+
+.acciones button:nth-child(4) {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Disabled */
+button:disabled {
+  opacity: 0.45;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+
+/* ========================
+   WHATSAPP
+======================== */
+.whatsapp {
+  display: block;
+  width: 92%;
+  max-width: 420px;
+  margin: 22px auto;
+  padding: 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  box-shadow: 0 0 22px rgba(37,211,102,0.8);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp:hover {
+  transform: scale(1.06);
+}
+
+/* ========================
+   TABLA
+======================== */
+.tabla-container {
+  overflow-x: auto;
+  margin-top: 26px;
+}
+
+.tabla-registros {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.tabla-registros th,
+.tabla-registros td {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.tabla-registros th {
+  background: rgba(6,77,55,0.9);
+  backdrop-filter: blur(6px);
+}
+
+/* ========================
+   TOTAL
+======================== */
+.total {
+  font-size: 1.2em;
+  margin-top: 16px;
+}
+
+.total.flash {
+  animation: flashTotal 0.35s ease;
+}
+
+#totalP {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+/* ========================
+   ANIMACIONES
+======================== */
+@keyframes pulseSelect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1.18); }
+}
+
+@keyframes flashTotal {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); color: #1db954; }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* ========================
+   MOBILE PRO
+======================== */
+@media (max-width: 480px) {
+  button {
+    padding: 15px;
+    font-size: 1.05em;
+  }
+
+  .partido {
+    padding: 18px;
+  }
+}

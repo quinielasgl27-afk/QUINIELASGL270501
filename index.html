@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quinielas GL VIP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <img src="https://i.imgur.com/uQfdvMz.jpeg" class="logo" alt="Logo Quinielas GL">
+    <div class="frase-logo">📲 Pronostica ⚜️ Compite ⚜️ Gana 💸</div>
+    <div class="frase-logo"> $20 Por Quiniela ⚜️ 3 x $50  ⚜️ 6 x $100 </div>
+    <div class="frase-logo"> Doble + $5.00  Max 2 ⚜️  Triple + $10  Max 2</div>
+
+    <h2> Quinielas GL</h2>
+    <h2>     VIP       </h2>
+    <div id="estadoJuego">Estás jugando: 0 dobles / 0 triples</div>
+     <div id="precioActual">Total: $20 </div>
+
+    <!-- Partidos -->
+    <div id="partidos"></div>
+
+    <!-- Inputs -->
+    <input id="nombre" placeholder="Nombre">
+    <input id="telefono" placeholder="Teléfono (10 dígitos)" maxlength="10">
+
+    <!-- Botones de acción -->
+    <div class="acciones">
+      <button onclick="agregar()">📝 Agregar</button>
+      <button onclick="aleatorio()">🔁Aleatorio</button>
+      <button onclick="limpiar()">🗑️​ Limpiar</button>
+      <button onclick="reiniciar()">⟳ Reiniciar</button>
+      <button id="toggleSonido" onclick="toggleSonido()">🔊 Sonido ON</button>
+    </div>
+
+    <!-- Tabla de registros -->
+    <div class="tabla-container">
+      <table id="registros" class="tabla-registros">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Folio</th>
+            <th>Nombre</th>
+            <th>Tel</th>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <th>P5</th>
+            <th>P6</th>
+            <th>P7</th>
+            <th>P8</th>
+            <th>P9</th>
+            <th>P10</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Total general -->
+    <p>Total a pagar: $<span id="totalP">0</span></p>
+
+    <!-- Enviar a WhatsApp -->
+    <a class="whatsapp"> ✆ Enviar a WhatsApp</a>
+
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
